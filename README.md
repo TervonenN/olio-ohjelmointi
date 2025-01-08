@@ -1,2 +1,2 @@
 # olio-ohjelmointi
-Olio-ohjelmointi ja oliopohjainen suunnittelu
+Olio-ohjelmointi ja oliopohjainen suunnittelu (kurssin tehtävät tulee tänne)
