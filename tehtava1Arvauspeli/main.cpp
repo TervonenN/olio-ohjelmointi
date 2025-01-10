@@ -3,36 +3,45 @@
 #include <ctime>
 
 using namespace std;
+// funktion prototyyppi
+int game();
 
 int main()
 {
-    srand(time(0));
+    // Kutsutaan game-funktiota ja tallennetaan arvausten lukumäärä
+    int arvaustenLkm = game();
 
-    // Arvotaan numero 1-20 väliltä
+    // Tulostetaan yritysten määrä
+    cout << "You guessed the number in " << arvaustenLkm << " attempts." << endl;
+
+    return 0;
+}
+int game(void) {
+    srand(time(0)); // Satunnaislukugeneraattorin siemen
+
+    // Arvotaan satunnainen numero väliltä 1-20
     int randomNumber = (rand() % 20) + 1;
-
-    // Arvattu numero
-    int arvaus = 0;
+    int arvaus = 0;        // Pelaajan arvaus
+    int arvaustenLkm = 0;  // Arvausten lukumäärä
 
     cout << "Guess a random number between 1-20: " << endl;
 
-    // Silmukka, joka jatkuu kunnes numero oikein
+    // Silmukka, joka jatkuu kunnes arvaus on oikein
     while (arvaus != randomNumber) {
         cout << "Enter your guess: ";
         cin >> arvaus;
 
+        arvaustenLkm++; // Kasvatetaan arvausten lukumäärää
+
         if (arvaus < randomNumber) {
-            cout << "The number is higher" << endl;
-        }
-
-        else if (arvaus > randomNumber) {
-            cout << "The number is lower" << endl;
-        }
-
-        else {
+            cout << "The number is higher!" << endl;
+        } else if (arvaus > randomNumber) {
+            cout << "The number is lower!" << endl;
+        } else {
             cout << "Correct! The number was: " << randomNumber << endl;
         }
+    }
 
-
-}
+    // Palautetaan arvausten lukumäärä
+    return arvaustenLkm;
 }
