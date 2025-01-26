@@ -8,6 +8,6 @@ int main()
 {
     Game peli(20);  // Luo uuden pelin, max arvo 20
     peli.play();    // Käynnistää pelin
-    peli.printGameResult();  // Tulostaa tuloksen
+    peli.printGameResult();
     return 0;
 }

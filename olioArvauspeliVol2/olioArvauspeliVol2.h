@@ -15,9 +15,9 @@ private:
 public:
     Game(int maxNum);
     ~Game();
-
     void play();
     void printGameResult();
+
 
 };
 
